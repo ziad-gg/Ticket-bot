@@ -9,6 +9,6 @@ module.exports = (client) => ({
     
     client.user.setPresence(presence);
     client.loger.log(`${client.user.tag} Is Online !`)
-    fetch.get("https://me-ticket.glitch.me")
+    fetch.get("https://me-ticket.glitch.me", {methode: "get"})
   }
 });
