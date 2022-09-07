@@ -12,6 +12,6 @@ module.exports = {
       "name": `${prefix}help`
     }]
   },
-  db: "mongodb+srv://ZIAD:EMAD@cluster0.qizpg.mongodb.net/TICKETS-BOT"
+  db: process.env.db
   
 };

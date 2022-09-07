@@ -18,12 +18,13 @@ class Ticket {
         this.Client.loger = new loger("logs.log");
         this.Client.login(this.Token);
         this.Client.commands = new Collection();
+        this.Client.collectors = new Collection();
         this.Client.languages = (readdirSync('./src/languages')).map(e => e.split('.')[0]);
         this.Client.embedColor = embedColor;
         mongoose.connect(db);
 
         for (let file of (readdirSync('handlers').filter(file => file.endsWith('.js')))) {
-            if (!file.startsWith('collector')) require(`../handlers/${file}`)(this.Client, events);
+             require(`../handlers/${file}`)(this.Client, events);
         };
     }
 }

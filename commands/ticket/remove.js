@@ -6,10 +6,10 @@ module.exports = {
     usages: ["remove (user)"],
     examples: ['remove {userMention}', 'remove {userId}'],
     args: true,
-    cooldown: 10,
+    cooldown: 3,
     permissions: {
       bot: ['ADMINISTRATOR'],
-      users: ['MANAGE_GUILD'],
+      users: ['ADMINISTRATOR'],
     },
   async execute(message, args, client) {
     
