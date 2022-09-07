@@ -65,7 +65,8 @@ module.exports = (client) => ({
       }, cooldownAmount);
     }
     
-    if (command.permissions && !message.member.permissions.has(command.permissions)) return message.reply(client.generalReplys.noPermissions(command.permissions.join(', ')));
+    if (command.permissions && !message.member.permissions.has(command.permissions.users)) return message.reply(client.generalReplys.noPermissions(command.permissions.users.join(', ')));
+    
     if (command.args && !args.length) {
       args[0] = command.name;
       let helpCmd = client.commands.get("help");

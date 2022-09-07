@@ -7,7 +7,7 @@ const wait = require('node:timers/promises').setTimeout;
 module.exports = {
     name: "open",
     cooldown: true,
-    setup: async (i, client) => {
+   async execute(i, client) {
 
            const data = await panals.findOne({
              guildId: i.guild.id,
@@ -50,7 +50,7 @@ module.exports = {
         const row = new MessageActionRow()
         .addComponents(
          new MessageButton()
-          .setCustomId(`close_ticket-${i.user.id}-${i.channel.id}`)
+          .setCustomId(`close_ticket`)
           .setLabel(data.inchannelMesage.closeButtonMessage)
           .setStyle('DANGER')
           .setEmoji('🔒'),
@@ -100,7 +100,7 @@ module.exports = {
          .setThumbnail(client.user.avatarURL({ dynamic: true }))
          .setFooter({text: `Powered by ziad`, iconUrl: client.user.avatarURL({ dynamic: true }) });
          
-         await i.reply({embeds: [messageTicketCreate], ephemeral: true}).catch(e => {})
+         await i.reply({embeds: [messageTicketCreate], ephemeral: true})
 
 
         }).catch(e => {

@@ -2,9 +2,8 @@ const { MessageActionRow, Modal, TextInputComponent } = require('discord.js');
 
 module.exports = {
     name: "closeWithReason",
-    setup: async (i) => {
-      
-      const modal = new Modal()
+     async execute(i)  {
+       const modal = new Modal()
 			.setCustomId('myModal')
 			.setTitle('close ticket with reason');
 
